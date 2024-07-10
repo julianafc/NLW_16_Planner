@@ -1,0 +1,38 @@
+<!DOCTYPE HMTL>
+<!--para comentar em HTML é preciso utilizar as setinhas -->
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
+    <script>
+      dayjs.locale("pt-br");
+    </script>
+  </head>
+
+  <body>
+    <form onsubmit="salvarAtividade(event)">
+      <div>
+        <input type="text" placeholder="Qual a atividade?" name="atividade" />
+      </div>
+
+      <div>
+        <select name="dia">
+          <option value="2024-02-01">01 de fevereiro</option>
+        </select>
+      </div>
+
+      <div>
+        <select name="hora">
+          <option value="10:30">10:30</option>
+        </select>
+      </div>
+
+      <button>Salvar atividade</button>
+    </form>
+    <h1>Atividades</h1>
+    <section></section>
+  </body>
+  <script src="script.js"></script>
+  <noscript>You need to enable JavaScript to view the full site.</noscript>
+</html>
