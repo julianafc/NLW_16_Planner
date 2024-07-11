@@ -1,5 +1,230 @@
 /* Comentários em CSS são feitos assim */
-html {
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+input,
+select,
+button,
+option {
+  font-family: 'Inter', sans-serif;
+  background-color: whitesmoke;
+  color: #09090b;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+/* app */
+
+#app,
+.btn {
+  padding: 40px 0px;
+  max-width: 320px;
+  margin: auto;
+}
+
+/* form */
+
+#place {
+  display: flex;
+  align-items: center;
+  padding: 22px 16px;
+  gap: 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+input,
+select {
+  all: unset;
+}
+
+input,
+select,
+button {
+  width: 100%;
+}
+
+.fields {
+  display: grid;
+  gap: 8px;
+}
+
+.field-wrapper {
+  padding: 18px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.field-wrapper:focus-within {
+  outline: 2px solid yellowgreen;
+}
+
+button {
+  margin-top: 12px;
+  border: none;
+  padding: 12px 20px;
+  background-color: yellowgreen;
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 16px;
+  color: #132F00;
+  cursor: pointer;
+}
+
+.card-bg {
+  background: whitesmoke;
+  box-shadow:
+    0px 8px 8px rgba(0, 0, 0, 0.1),
+    0px 4px 4px rgba(0, 0, 0, 0.1),
+    0px 2px 2px rgba(0, 0, 0, 0.1),
+    0px 0px 0px 1px rgba(0, 0, 0, 0.1),
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+main {
+  margin-top: 32px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+section {
+  display: grid;
+  gap: 10px;
+}
+
+section input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+}
+
+section .card-bg {
+  position: relative;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section .card-bg:has(:checked) .active,
+section .card-bg .inactive {
+  display: block;
+}
+
+section .card-bg:has(:checked) .inactive,
+section .card-bg .active {
+  display: none;
+}
+
+section .card-bg>div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+}
+
+time {
+  font-size: 14px;
+  color: #A1A1AB;
+  text-align: right;
+}
+
+time.full {
+  display: none;
+}
+
+@media (width > 1024px) {
+
+  #app,
+  .btn {
+    display: flex;
+    max-width: 960px;
+    gap: 32px;
+  }
+
+  main {
+    margin-top: 0;
+    flex: 1;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  time.full {
+    display: block;
+  }
+
+  time.short {
+    display: none;
+  }
+}
+
+section .card-bg {
+  animation: appear 300ms;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#marginTop {
+  background-color: whitesmoke;
+  padding-top: 32px;
+}
+
+.light-theme {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.dark-theme {
+  /* para colocar os componentes em dark mode, precisamos colocar eles dentro do dark-theme */
   background-color: #09090b;
-  color: #00ff00;
+  color: yellowgreen;
+
+  .card-bg {
+    background-color: #09090b;
+    color: yellowgreen;
+  }
+
+  .field-wrapper {
+    background-color: #09090b;
+    color: yellowgreen;
+  }
+
+  #marginTop {
+    background-color: #09090b;
+  }
 }
